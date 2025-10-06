@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI-Powered Brainstorming Board (minimal demo)
 
 This is a minimal Trello-like brainstorming board with simple AI hooks for idea suggestions, clustering, and summarization.
@@ -34,3 +35,6 @@ Features
 
 Notes
 - This is a demo scaffold for the assignment. For production, add proper auth, validation, rate-limits, and secrets management.
+=======
+# AI-Powered-Brainstorming-Board
+>>>>>>> 2f3de6e8c7f0d265dad18078999c3702a8896edc
