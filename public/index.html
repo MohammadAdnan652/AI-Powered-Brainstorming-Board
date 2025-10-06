@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Brainstorm Board</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div class="brand">AI Brainstorm Board</div>
+      <div class="controls">
+        <input id="username" placeholder="username" />
+        <button id="loginBtn" class="btn">Login</button>
+        <div id="userStatus" style="min-width:120px;text-align:right;color:var(--muted);font-size:13px">Not signed in</div>
+        <div id="saveStatus" class="save-status">No changes</div>
+        <button id="exportMdBtn" class="btn">Export MD</button>
+      </div>
+    </header>
+
+    <aside id="left">
+      <h2>Tools</h2>
+      <div class="toolbar-row">
+        <button id="addCardBtn" class="btn primary">Add Card</button>
+        <button id="clusterBtn" class="btn">Cluster</button>
+        <button id="summarizeBtn" class="btn">Summarize</button>
+      </div>
+      <hr />
+      <div class="help">Tip: Click a card's "Suggest" to get AI ideas. Drag cards between columns.</div>
+    </aside>
+
+    <main id="board"></main>
+
+    <aside id="right">
+      <div class="panel">
+        <h3>AI Summary</h3>
+        <div id="summary">No summary yet</div>
+      </div>
+      <div class="panel">
+        <h4>Suggestions Log</h4>
+        <input id="searchInput" placeholder="Search ideas..." style="width:100%;padding:8px;border-radius:6px;margin-bottom:8px" />
+        <div id="searchResults" style="max-height:140px;overflow:auto;margin-bottom:8px"></div>
+        <div id="suggestionsLog"></div>
+      </div>
+    </aside>
+  </div>
+  
+  <!-- Suggestion modal (insert ideas) -->
+  <div id="suggestionModal" class="suggestion-modal" style="display:none">
+    <div class="modal-card">
+      <h4>AI Suggestions</h4>
+      <div id="suggestionList"></div>
+      <div style="text-align:right;margin-top:10px"><button id="closeSuggestionModal" class="btn">Close</button></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

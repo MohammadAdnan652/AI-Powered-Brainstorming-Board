@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b1220;
+  --panel: #0f1724;
+  --muted: #9aa4b2;
+  --gradient-start: #071025;
+  --gradient-end: #04101b;
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* App Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app .main {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 16px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.toolbar .controls {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Board */
+.board {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-padding: 24px;
+  scroll-behavior: smooth;
+}
+
+.board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.board::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Columns */
+.column {
+  min-width: 320px;
+  max-width: 320px;
+  background: linear-gradient(180deg, #eaf2ff 0%, #dfefff 100%);
+  padding: 16px;
+  border-radius: 16px;
+  color: #03204a;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+.column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.column::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.03);
+  border-radius: 3px;
+}
+
+.column::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.06);
+  border-radius: 3px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  color: #1a1a1a;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+.card textarea {
+  width: 100%;
+  border: 0;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: transparent;
+  padding: 0;
+}
+
+.card textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* AI Panel */
+.ai-panel {
+  width: 340px;
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
